@@ -4,11 +4,12 @@
     secondaryBtnText="Signup Now"
     (submit)="submit()"
     (navigate)="navigate()"
-
+    [disablePrimaryBtn]="!loginForm.valid"
 >
     <form [formGroup]="loginForm">
         <app-primary-input
-            forName="email"
+            formControlName="email"
+            inputName="email"
             type="email"
             label="Email"
             placeholder="johndoe@gmail.com"
@@ -16,11 +17,11 @@
             <img src="/assets/svg/email-icon.svg"/>
         </app-primary-input>
         <app-primary-input
-        forName="password"
-        type="password"
-        label="Your Password"
-       
-    >
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Your Password"
+        >
         <img src="/assets/svg/password-icon.svg"/>
     </app-primary-input>
     <span>Forgot password?</span>
